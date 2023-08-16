@@ -1,0 +1,18 @@
+<nav class="navbar navbar-light bg-light d-flex justify-content-between">
+  <span class="navbar-text">
+    YELP
+  </span>
+  <div>
+  <i class="fa-solid fa-backward"></i>
+  <%= link_to "New Restaurant", new_restaurant_path, class: "btn btn-primary" %>
+  </div>
+</nav>
+
+<div id="list">
+  <% @restaurants.each do |restaurant| %>
+  <li>
+  <%= link_to restaurant.name, restaurant_path(restaurant) %>
+  </li>
+
+  <% end %>
+</div>

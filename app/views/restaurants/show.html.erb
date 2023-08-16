@@ -1,0 +1,22 @@
+<nav class="navbar navbar-light bg-light d-flex justify-content-between">
+  <span class="navbar-text">
+    YELP
+  </span>
+  <div>
+  <i class="fa-solid fa-backward"></i>
+  <%= link_to "Liste Des restaurants", restaurants_path, class: "btn btn-primary" %>
+  </div>
+</nav>
+
+<div class="container">
+  <div id="show">
+    <h2><%=@restaurant.name %></h2>
+    <p><%=@restaurant.address %></p>
+    <p><%=@restaurant.category %></p>
+    <ul><% @restaurant.reviews.each do |review| %>
+      <li><%=review.content%>  -  <%= review.rating%>/5</li>
+      <% end %>
+    </ul>
+    <div class="btn_blue"><%= link_to "Post Review", new_restaurant_review_path(@restaurant)%></div>
+  </div>
+</div>

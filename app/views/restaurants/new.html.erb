@@ -1,0 +1,18 @@
+<nav class="navbar navbar-light bg-light d-flex justify-content-between">
+  <span class="navbar-text">
+    YELP
+  </span>
+  <div>
+  <i class="fa-solid fa-backward"></i>
+  <%= link_to "Retour à la liste des Restos", restaurants_path, class: "btn btn-primary"  %>
+  </div>
+</nav>
+  <div id="new">
+    <h1>🍔🍔New Restaurant🍔🍔</h1>
+    <%= simple_form_for(@restaurant) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :category, collection: Restaurant::CATEGORIES %>
+      <%= f.submit class: "btn btn-primary" %>
+    <% end %>
+  </div>
